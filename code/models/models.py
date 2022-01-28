@@ -52,7 +52,7 @@ class DANN_AlexNet(nn.Module):
             nn.Dropout(),
             nn.Linear(4096, 4096),
             nn.ReLU(inplace=True),
-            nn.Linear(4096, num_classes),
+            nn.Linear(4096, 14),
         )
         # domain classifier part
         self.GD = nn.Sequential(
