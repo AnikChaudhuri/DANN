@@ -52,7 +52,7 @@ class DANN_AlexNet(nn.Module):
             nn.Dropout(),
             nn.Linear(4096, 4096),
             nn.ReLU(inplace=True),
-            nn.Linear(4096, 14),
+            nn.Linear(4096, num_classes),
         )
         # domain classifier part
         self.GD = nn.Sequential(
@@ -80,7 +80,7 @@ class DANN_AlexNet(nn.Module):
             class_outputs = self.classifier(features)
             return class_outputs
 
-def dann_net(pretrained=False, progress=True, n_classes=1000, **kwargs):
+def dann_net(pretrained=False, progress=True, n_classes=14, **kwargs):
     """AlexNet model architecture 
     Args:
         pretrained (bool):  If True, returns a model pre-trained on ImageNet
