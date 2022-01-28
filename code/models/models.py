@@ -93,8 +93,8 @@ def dann_net(pretrained=False, progress=True, n_classes=14, **kwargs):
         net.load_state_dict(state_dict, strict = False)
 
         # Change output classes in last layer
-        net.classifier[13] = nn.Linear(4096, n_classes)
-        net.GD[13] = nn.Linear(4096, 2)
+        net.classifier[6] = nn.Linear(4096, n_classes)
+        net.GD[6] = nn.Linear(4096, 2)
 
         # Copy pretrained weights from the classifier to the domain_classifier (GD)
         net.GD[1].weight.data = net.classifier[1].weight.data.clone()
