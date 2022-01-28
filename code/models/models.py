@@ -80,7 +80,7 @@ class DANN_AlexNet(nn.Module):
             class_outputs = self.classifier(features)
             return class_outputs
 
-def dann_net(pretrained=False, progress=True, n_classes=14, **kwargs):
+def dann_net(pretrained=False, progress=True, n_classes=1000, **kwargs):
     """AlexNet model architecture 
     Args:
         pretrained (bool):  If True, returns a model pre-trained on ImageNet
